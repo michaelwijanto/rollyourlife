@@ -1,4 +1,10 @@
+img {
+    border-radius: 8px;
+}
 
+#avatar img {
+    margin-left: 200px;
+}
 
 #title{
     text-align: center;
@@ -94,9 +100,9 @@ h2 {
 }
 
 #avatar{
-    background:#C1FFD7;
+    background:rgba(193,255,215,0.2);
     width: 30%;
-    height: 300px;
+    height: 350px;
     /* padding: 50px; */
     margin-right: 50px;
     margin-left: 50px;
@@ -107,7 +113,7 @@ h2 {
 }
 
 #event{
-    background:#B5DEFF ;
+    background:rgba(181,222,255,0.2) ;
     width: 30%;
     height: 400px;
     margin-right: 50px;
@@ -123,7 +129,7 @@ h2 {
 }
 
 #history{
-    background:#CAB8FF;
+    background:rgba(202,184,255,0.2);
     width: 30%;
     height: 400px;
     margin-right: 50px;
