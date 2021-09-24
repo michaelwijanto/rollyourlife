@@ -12,15 +12,8 @@
     <title><img src="file:///D:/Hacktiv8/Fase%200/Week%204/Day%204/Hackaton%20Roll%20Your%20Life/0fbae2bd3a0bd45b0d6a25f6459d95a3.gif"> ROLL YOUR LIFE</title>
 </head>
 <body>
-    <!-- <div>
-        <h1>WELCOME</h1>
-        <input readonly style="border:0;" value="0" id="counter" />
-        <p id="test"></p>
-        <p id="actions"></p>
-        <button id="roll">rolllllllll</button>
-        <button id="reset">restart</button> </div> -->
-    <div>
-        <div class="wrapper">
+    <div style="width: 5%;">
+        <div class="wrapper" >
             <span>R</span>
             <span>O</span>
             <span>L</span>
@@ -35,50 +28,59 @@
             <span>E</span>
           </div>
     </div>
-    <div>
-        <p>Player Name</p>
-        <p>Your First Balance</p>
-    </div>
+
     
     <div id="progres">
         <h2 id="lifeprogres"> Your Life Progres</h2>
         <div id = "bulats">
-            <div class="bulat dead"><p id ="start">Start</p></div>
-            <div class="bulat active" ></div>
-            <div class="bulat "></div>
-            <div class="bulat "></div>
-            <div class="bulat "></div>
-            <div class="bulat "></div>
-            <div class="bulat "></div>
-            <div class="bulat "></div>
-            <div class="bulat "></div>
-            <div class="bulat "></div>
-            <div class="bulat "><p id ="end">End</p></div>
+            <div id="bulat-0" class="bulat active"><p id ="start">Start</p></div>
+            <div id="bulat-1" class="bulat " ></div>
+            <div id="bulat-2" class="bulat "></div>
+            <div id="bulat-3" class="bulat "></div>
+            <div id="bulat-4" class="bulat "></div>
+            <div id="bulat-5" class="bulat "></div>
+            <div id="bulat-6" class="bulat "></div>
+            <div id="bulat-7" class="bulat "></div>
+            <div id="bulat-8" class="bulat "></div>
+            <div id="bulat-9" class="bulat "></div>
+            <div id="bulat-10" class="bulat "><p id ="end">End</p></div>
         </div>
     </div>
+
     <div class="kotak" id="posisikotak">
         <div id="avatar">
             <p class="text-center">Kotak avatar</p>
+            <div style="display:flex; flex-direction: column; align-items: center;">
+                <img id="avatarimg" src="./Assets/Images/flatAvatar.png" alt="avatar" style=" height: 150px; width: 150px; margin-bottom: 10px;"/>
+                <p style="margin: 10px;">Player Name</p>
+                <p style="margin: 10px;">Starting Balance: 10000</p>
+                <p style="margin: 10px;">Balance: <span id="wallet">Rp 10000</span></p>
+                <!-- <p>Total Win: <span id="winning">0</span></p> -->
+            </div>
         </div>
+
         <div id="event">
             <p class="text-center">Kotak Event</p>
-            <ol>
-                <li>Event 1</li>
-                <li>Event 2</li>
-                <li>Event 3</li>
-            </ol> 
+            <p id="actions" style="height: 60%; margin: auto 10px; text-align: center; "></p>
+            <div style="display: flex; flex-direction: row; justify-content: center;">
+                <button id="roll" class="roll" style="margin-right: 15px;">ROLL DADU</button>
+                <button id="reset" class="reset">RESTART</button>
+            </div>
         </div>
+
         <div id="history">
             <p class="text-center">Kotak History</p>
-            <ol>
-                <li>History1</li>
-                <li>History2</li>
-                <li>History3</li>
-            </ol>
             <div id="history-box">
-                <div id="balance">Balance:</div>
-                <div id="roll-dadu">Dadu:</div>
+                <!-- <div id="balance">
+                    <h4 style="margin: 0px;">Balance: <span id="wallet">0</span></h2>
+                </div> -->
+                <div id="roll-dadu">
+                    <h4 style="margin: 0px;">Dadu: <span id="dadu">0</span></h2>
+                </div>
             </div>
+            <div style="height: 500px; width: 500px; overflow-y: auto; margin: auto 10px;" >
+                <p id="test" style=" border:2px;" ></p>
+            </div>           
         </div>
     </div>
     <script src="js/game.js"></script>
