@@ -39,6 +39,21 @@ BUAT JUDUL YANG GERAK2
 .wrapper span:nth-child(7) {
   animation-delay: 840ms;
 }
+.wrapper span:nth-child(8) {
+  animation-delay: 960ms;
+}
+.wrapper span:nth-child(9) {
+  animation-delay: 1080ms;
+}
+.wrapper span:nth-child(10) {
+  animation-delay: 1200ms;
+}
+.wrapper span:nth-child(11) {
+  animation-delay: 1320ms;
+}
+.wrapper span:nth-child(12) {
+  animation-delay: 1440ms;
+}
 
 @keyframes jump {
   33% {
@@ -64,27 +79,24 @@ BUAT JUDUL YANG GERAK2
   }
 }
 
-
 /* 
 Buat border rainbow
 */
 body {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	height: 100vh;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-
-
