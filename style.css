@@ -29,18 +29,13 @@ body{
     border-radius: 50%;
 }
 
-/* .border-logo{
-    width: 50px;
-	height: 50px;
-	background: #dac52c;
-	border-radius: 50%;
-} */
 
 #progres{
     background-color: rgba(255,222,222,0.2);
     height: 250px;
     border-radius: 200px;
-
+    margin-left: 150px;
+    margin-right: 150px;
 }
 
 .buat-img{
@@ -142,9 +137,6 @@ h2 {
 #dice{
     margin: 30px 50px;
 }
-
-
-
 
 .kotak{
     display: flex;
