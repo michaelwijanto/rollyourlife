@@ -49,33 +49,57 @@
 
     <div class="kotak" id="posisikotak">
         <div id="avatar">
-            <p class="text-center">Kotak avatar</p>
+            <p class="text-center">Profile</p>
             <div style="display:flex; flex-direction: column; align-items: center;">
                 <img id="avatarimg" src="./Assets/Images/flatAvatar.png" alt="avatar" style=" height: 150px; width: 150px; margin-bottom: 10px;"/>
-                <p style="margin: 10px;">Player Name</p>
+                <p id="playername" style="margin: 10px;">Player Name</p>
                 <p style="margin: 10px;">Starting Balance: 10000</p>
-                <p style="margin: 10px;">Balance: <span id="wallet">Rp 10000</span></p>
-                <!-- <p>Total Win: <span id="winning">0</span></p> -->
+                <p style="margin: 10px;">Balance: <span id="wallet">Rp 10.000,00</span></p>
+            </div>
+        </div>
+        <div id="homescreen" >
+            <h2>Welcome</h2>
+            <div style="display:flex; flex-direction: column; align-items: center;">
+                <div style="display:flex;">
+                    <label for="text" style="margin-right: 10px;">Name: </label>
+                    <input id="nama" type="text" placeholder="Masukkan nama kamu" />
+                </div>
+                <button id="masukNama" class="roll" style="margin-top:50px;">Enter</button>
             </div>
         </div>
 
-        <div id="event">
-            <p class="text-center">Kotak Event</p>
-            <p id="actions" style="height: 60%; margin: auto 10px; text-align: center; "></p>
+        <div id="endscreen" style="display:none">
+            <h2>RESULTS</h2>
+            <div style="display: flex; flex-direction: column;">
+            <p id="result" style="text-align: center; height: 70%;">
+            </p>
+            <h4 style="text-align: center;">Play Again?</h4>
             <div style="display: flex; flex-direction: row; justify-content: center;">
-                <button id="roll" class="roll" style="margin-right: 15px;">ROLL DADU</button>
+                <button id="ulangi" class="roll" style="margin-right: 15px;">PLAY AGAIN</button>
+                <button id="awal" class="roll">RESET GAME</button>
+            </div>
+            </div>
+        </div>
+
+        <div id="event" style="display:none">
+            <p class="text-center">Event</p>
+            
+            <p id="actions" style="height: 35%; margin: auto 10px; text-align: center; font-family: 'Courier New', Courier, monospace; "></p>
+            <div class="dice-wrapper">
+                <img src="Assets/Images/2.png" id="dice" style="height: 75px; width: 75px;">
+            </div>
+            
+            <div style="display: flex; flex-direction: row; justify-content: center;">
+                <button id="roll" class="roll" style="margin-right: 15px;">ROLL DICE</button>
                 <button id="reset" class="reset">RESTART</button>
             </div>
         </div>
 
-        <div id="history">
-            <p class="text-center">Kotak History</p>
+        <div id="history" style="display:none">
+            <p class="text-center">History</p>
             <div id="history-box">
-                <!-- <div id="balance">
-                    <h4 style="margin: 0px;">Balance: <span id="wallet">0</span></h2>
-                </div> -->
                 <div id="roll-dadu">
-                    <h4 style="margin: 0px;">Dadu: <span id="dadu">0</span></h2>
+                    <h4 style="margin: 0px;">Dice: <span id="dadu">0</span></h2>
                 </div>
             </div>
             <div style="height: 500px; width: 500px; overflow-y: auto; margin: auto 10px;" >

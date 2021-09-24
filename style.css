@@ -77,11 +77,13 @@ h2 {
 #start {
   font-size: large;
   margin-top: 50px;
+  font-family: "Pacifico", cursive;
 }
 
 #end {
   font-size: large;
   margin-top: 50px;
+  font-family: "Pacifico", cursive;
 }
 
 .kotak {
@@ -97,6 +99,28 @@ h2 {
 #avatar {
   background: rgba(255, 255, 255, 0.6);
   width: 20%;
+  height: 400px;
+  margin-right: 50px;
+  color: #212121;
+  padding-top: 16px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+#homescreen {
+  background: rgba(255, 255, 255, 0.6);
+  width: 80%;
+  height: 400px;
+  margin-right: 50px;
+  color: #212121;
+  padding-top: 16px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+#endscreen {
+  background: rgba(255, 255, 255, 0.6);
+  width: 80%;
   height: 400px;
   margin-right: 50px;
   color: #212121;
@@ -152,11 +176,7 @@ h2 {
   padding: 12px;
 }
 
-/* #posisikotak{
-    position: center;
-} */
-
-#roll {
+.roll {
   width: 75px;
   height: 50px;
   border: none;
@@ -169,13 +189,13 @@ h2 {
   font-size: 15px;
 }
 
-#roll:hover:enabled {
+.roll:hover:enabled {
   box-shadow: inset 50px 0 0 0 blueviolet;
   cursor: pointer;
   color: black;
 }
 
-#reset {
+.reset {
   width: 75px;
   height: 50px;
   border: none;
@@ -186,8 +206,17 @@ h2 {
   transition: ease-out 0.3s;
   outline: none;
 }
-#reset:hover {
+.reset:hover {
   box-shadow: inset 50px 0 0 0 red;
   cursor: pointer;
   color: black;
+}
+
+.dice-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#dice {
+  margin: 25px 50px;
 }

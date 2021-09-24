@@ -67,13 +67,13 @@ function tetanggaHamil(player) {
 function hacktiv8(player) {
   if (player.diceOption > 4) {
     player.balance += 6000;
-    player.lastEvent = `Anda memutuskan untuk mengikuti hacktiv8. Setelah membayar dan mengikuti kelas dengan giat, anda lulus dan mendapatkan pekerjaan tambahan. Balance anda bertambah 6000.<br> Balance anda sekarnag ${player.balance}`;
+    player.lastEvent = `Anda memutuskan untuk mengikuti program immersive Hacktiv. Setelah membayar dan mengikuti kelas dengan giat, anda lulus dan mendapatkan pekerjaan tambahan. Balance anda bertambah 6000.<br> Balance anda sekarang ${player.balance}`;
   } else {
     if (player.balance == 0) {
       return balanceHabis(player);
     }
     player.balance -= 6000;
-    player.lastEvent = `Anda memutuskan untuk mengikuti hacktiv8. Setelah membayar anda mengikuti kelas dengan giat. Namun sayangnya anda gugur dalam fase pembelajaran. Balance anda berkurang 6000.<br> Balance anda sekarang ${player.balance}`;
+    player.lastEvent = `Anda memutuskan untuk mengikuti program immersive Hacktiv. Setelah membayar anda mengikuti kelas dengan giat. Namun sayangnya anda gugur dalam fase pembelajaran. Balance anda berkurang 6000.<br> Balance anda sekarang ${player.balance}`;
   }
   return player;
 }
@@ -129,15 +129,15 @@ function events(action, player) {
 
 function result(balance, balanceAwal) {
   if (balance <= 0) {
-    return `anda tidak dapat bermain lagi`;
+    return `Hidup anda kurang beruntung. Jangan coba game ini lagi`;
   }
   if (balance < balanceAwal) {
-    return `anda tidak hogi`;
+    return `Anda masih survive dengan finansial yang pas-pasan`;
   }
   if (balance == balanceAwal) {
-    return `anda flat`;
+    return `Hidup anda flat-flat aja. Anda tidak mengalami kemajuan dan kemunduran finansial`;
   }
-  return `anda untung`;
+  return `Selamat anda menjadi orang kaya!`;
 }
 
 function balanceHabis(player) {
@@ -147,7 +147,6 @@ function balanceHabis(player) {
 
 function rollTheDice(player) {
   player.dice = rollDice();
-  // console.log(player.dice, `<<<<<<<<<<<`);
   //if dice is 5 but not married
   while (player.dice == 5 && !player.marriage) {
     // console.log(`caught at dice = 5`);
@@ -192,12 +191,6 @@ function rollTheDice(player) {
   return player;
 }
 
-// let eventStatus = "";
-
-// let history = []; //<------ put dice number and the event
-// let balance = 10000;
-// let marriageCheck = false;
-
 let player = {
   name: "bejo",
   balance: 10000,
@@ -218,6 +211,68 @@ let wallet = document.getElementById("wallet");
 let dadu = document.getElementById("dadu");
 let avatarimg = document.getElementById("avatarimg");
 let count = 1;
+let diceimg = document.getElementById("dice");
+let startButton = document.getElementById("masukNama");
+let changeName = document.getElementById("nama");
+let endScreen = document.getElementById("endscreen");
+let paraResult = document.getElementById("result");
+let playAgain = document.getElementById("ulangi");
+let resetGame = document.getElementById("awal");
+
+function resetting() {
+  count = 1;
+  paragraph.innerHTML = "";
+  avatarimg.src = "./Assets/Images/flatAvatar.png";
+  actions.innerHTML = "";
+  rollButton.disabled = false;
+  rollButton.innerText = "ROLL DADU";
+  dice.src = `./Assets/Images/0.png`;
+  wallet.innerText = new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+  }).format(10000);
+  dadu.innerText = 0;
+  wallet.style = "color:black";
+  for (let i = 0; i < 11; i++) {
+    let temp = document.getElementById(`bulat-${i}`);
+    if (i == 0) temp.className = "bulat active";
+    else temp.className = "bulat";
+  }
+  player = {
+    name: "bejo",
+    balance: 10000,
+    marriage: false,
+    dice: 0,
+    lastDice: 0,
+    diceOption: 0,
+    history: [], //<--- put a log
+    lastEvent: "", //<--store last event message
+  };
+  return 1;
+}
+
+playAgain.addEventListener("click", () => {
+  resetting();
+  endScreen.style = "display: none";
+  document.getElementById("event").style = "display: visible;";
+  document.getElementById("history").style = "display: visible";
+});
+
+resetGame.addEventListener("click", () => {
+  resetting();
+  document.getElementById("playername").innerText = "Player Name";
+  document.getElementById("homescreen").style = "display: visible";
+  document.getElementById("event").style = "display: none;";
+  document.getElementById("history").style = "display: none;";
+  endScreen.style = "display: none;";
+});
+
+startButton.addEventListener("click", () => {
+  document.getElementById("playername").innerText = changeName.value;
+  document.getElementById("homescreen").style = "display: none";
+  document.getElementById("event").style = "display:visible;";
+  document.getElementById("history").style = "display: visible;";
+});
 
 rollButton.addEventListener("click", () => {
   console.log(`clicked`);
@@ -226,31 +281,39 @@ rollButton.addEventListener("click", () => {
 
   if (player.history[i].balanceThen == player.history[i].balanceNow) {
     rollButton.disabled = true;
-    rollButton.innerText = "GAME OVER";
+    rollButton.innerText = "GAME OVER. Silahkan pencet tombol restart";
   }
+
   if (count == 10) {
     rollButton.disabled = true;
     rollButton.innerText = "GAME OVER";
     actions.innerHTML += "<br>" + result(player.balance, 10000);
+    endScreen.style = "display: visible";
+    document.getElementById("event").style = "display: none;";
+    document.getElementById("history").style = "display: none;";
+    paraResult.innerText = result(player.balance, 10000);
   }
 
-  wallet.innerText = "Rp " + player.balance;
-  if (player.balance < 0) {
+  wallet.innerText = new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+  }).format(player.balance);
+  if (player.balance <= 0) {
     wallet.style = " color: red;";
     avatarimg.src = "./Assets/Images/deadAvatar.png";
   } else if (player.balance < 10000) {
     wallet.style = " color: orangered;";
     avatarimg.src = "./Assets/Images/poorAvatar.png";
   } else {
-    if (player.balance > 17000) {
+    if (player.balance > 15000) {
       avatarimg.src = "./Assets/Images/richAvatar.png";
     } else avatarimg.src = "./Assets/Images/flatAvatar.png";
     wallet.style = " color:black;";
   }
   dadu.innerText = player.dice;
-  paragraph.innerHTML += `Dadu: ${player.history[i].dice}<br> Balance: ${player.history[i].balanceThen} --> ${player.history[i].balanceNow}<br>Action: ${player.history[i].action}<br>----------------------------------------------------------<br>`;
+  paragraph.innerHTML += `Dice: ${player.history[i].dice}<br> Balance: ${player.history[i].balanceThen} --> ${player.history[i].balanceNow}<br>Action: ${player.history[i].action}<br>----------------------------------------------------------<br>`;
   actions.innerHTML = player.lastEvent;
-
+  dice.src = `./Assets/Images/${player.dice}.png`;
   let pindahBulat = document.getElementById(`bulat-${count}`);
   let gantiAktif = document.getElementById(`bulat-${count - 1}`);
   gantiAktif.className = "bulat dead";
@@ -265,7 +328,11 @@ resetButton.addEventListener("click", () => {
   actions.innerHTML = "";
   rollButton.disabled = false;
   rollButton.innerText = "ROLL DADU";
-  wallet.innerText = "Rp " + 10000;
+  dice.src = `./Assets/Images/0.png`;
+  wallet.innerText = new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+  }).format(10000);
   dadu.innerText = 0;
   wallet.style = "color:black";
   for (let i = 0; i < 11; i++) {
