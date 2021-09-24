@@ -1,0 +1,157 @@
+
+
+#title{
+    text-align: center;
+    position: relative;
+    margin-bottom: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+}
+
+body{
+    background-image: url('https://www.eclectech.co.uk/b3ta/dicedance.gif');
+    background-size: cover;    
+    height: 100vh;
+    padding:0;
+    margin:0;
+    z-index: 100;
+}
+
+body{
+    /* background-color: #FEFBF3; */
+    background-color: wheat;
+    font-family: 'Roboto', sans-serif;
+}
+
+#progres{
+    background-color: rgba(255,222,222,0.2);
+    height: 250px;
+    border-radius: 200px;
+
+}
+
+#lifeprogres{
+    font-family: 'Pacifico', cursive;
+    font-size: 36px;
+}
+h2 {
+    text-align: center;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+#bulats{
+    justify-content: center;
+    display: flex;
+    margin-bottom: 100px;
+    
+}
+.bulat {
+    width: 30px;
+	height: 30px;
+    margin: 20px;
+	background: #28FFBF;
+	border-radius: 200%;
+}
+
+
+@-webkit-keyframes pulse {
+  0% { box-shadow:0 0 8px #512D6D, inset 0 0 8px #512D6D; }
+  50% { box-shadow:0 0 16px #512D6D, inset 0 0 14px #512D6D; }
+  100% { box-shadow:0 0 8px #512D6D, inset 0 0 8px #512D6D; }
+}
+
+.active{
+    /* background-color:transparent; */
+    border-radius:50px;
+    box-shadow: 0 0 8px #512D6D, inset 0 0 8px #512D6D;
+    -webkit-animation: pulse 2s linear 1s infinite;
+}
+
+.dead{
+    background-color: #212121;
+}
+
+#start{
+    font-size: large;
+    margin-top: 50px;
+}
+
+#end{
+    font-size: large;
+    margin-top: 50px;
+
+}
+
+.kotak{
+    display: flex;
+    margin: 50px 50px;
+    padding: 75px;
+    font-size: 15pt;
+    /* text-align: center; */
+    color: #FFFFFF;
+    justify-content: center;
+}
+
+#avatar{
+    background:#C1FFD7;
+    width: 30%;
+    height: 300px;
+    /* padding: 50px; */
+    margin-right: 50px;
+    margin-left: 50px;
+    color: #212121;
+    padding-top: 16px;
+    border-radius: 12px;
+    font-weight: bold
+}
+
+#event{
+    background:#B5DEFF ;
+    width: 30%;
+    height: 400px;
+    margin-right: 50px;
+    margin-left: 50px;
+    color: #212121;
+    padding-top: 16px;
+    border-radius: 12px;
+}
+
+.text-center{
+    text-align: center;
+    font-weight: bold;
+}
+
+#history{
+    background:#CAB8FF;
+    width: 30%;
+    height: 400px;
+    margin-right: 50px;
+    margin-left: 50px;
+    color: #212121;
+    padding-top: 16px;
+    border-radius: 12px;
+    position: relative;
+
+}
+#history-box{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
+}
+#balance{
+    border: 1px solid red;
+    width: 50%;
+    padding: 12px;
+}
+#roll-dadu{
+    border: 1px solid green;
+    width: 50%;
+    padding: 12px;
+}
+
+/* #posisikotak{
+    position: center;
+} */
