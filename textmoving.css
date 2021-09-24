@@ -39,6 +39,21 @@ BUAT JUDUL YANG GERAK2
 .wrapper span:nth-child(7) {
   animation-delay: 840ms;
 }
+.wrapper span:nth-child(8) {
+  animation-delay: 960ms;
+}
+.wrapper span:nth-child(9) {
+  animation-delay: 1080ms;
+}
+.wrapper span:nth-child(10) {
+  animation-delay: 1200ms;
+}
+.wrapper span:nth-child(11) {
+  animation-delay: 1320ms;
+}
+.wrapper span:nth-child(12) {
+  animation-delay: 1440ms;
+}
 
 @keyframes jump {
   33% {
